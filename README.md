@@ -24,8 +24,7 @@ function stream = zlib.deflate([ int compression_level ], [ int window_size ])
     Returns a "stream" function that compresses (or deflates) all
     strings passed in.  Specifically, use it as such:
 
-    string deflated, bool eof, int bytes_in, int bytes_out =
-            stream(string input [, 'sync' | 'full' | 'finish'])
+    string deflated, bool eof, int bytes_in, int bytes_out = stream(string input [, 'sync' | 'full' | 'finish'])
 
         Takes input and deflates and returns a portion of it,
         optionally forcing a flush.
@@ -64,8 +63,7 @@ function stream = zlib.inflate([int windowBits])
 
     The "stream" function should be used as such:
 
-    string inflated, bool eof, int bytes_in, int bytes_out =
-            stream(string input)
+    string inflated, bool eof, int bytes_in, int bytes_out = stream(string input)
 
         Takes input and inflates and returns a portion of it.  If it
         detects the end of a deflation stream, then total will be the
@@ -85,14 +83,14 @@ function stream = zlib.inflate([int windowBits])
 
 
 function compute_checksum = zlib.adler32()
+
 function compute_checksum = zlib.crc32()
 
     Create a new checksum computation function using either the
     adler32 or crc32 algorithms.  This resulting function should be
     used as such:
 
-    int checksum = compute_checksum(string input |
-                                    function compute_checksum)
+    int checksum = compute_checksum(string input | function compute_checksum)
 
         The compute_checksum function takes as input either a string
         that is logically getting appended to or another
