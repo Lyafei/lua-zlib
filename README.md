@@ -2,6 +2,8 @@
 
 ## Loading the library
 
+    Copy zlib.so to `/usr/local/openresty/lualib/` directory
+
     If you built the library as a loadable package
         [local] zlib = require 'zlib'
 
